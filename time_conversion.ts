@@ -29,17 +29,35 @@ Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
 
 /*
 ***Chat-GPT***
-This TypeScript code reads a time string in 12-hour format from the standard
-input, converts it to military (24-hour) format using the timeConversion
-function, and writes the result to the standard output.
+The timeConversion function in this code is responsible for converting a time
+string from 12-hour AM/PM format to 24-hour military time format.
 
-The timeConversion function takes a single string parameter s representing a
-time in 12-hour format (e.g. "07:05:45PM"). It uses a regular expression to
-match the input string against a pattern that captures the hour, minute, second,
-and AM/PM indicator. If the pattern matches, the function converts the time to
-24-hour format by adding 12 to the hour if the time is in PM and the hour is not
-already 12, and setting the hour to 00 if the time is in AM and the hour is 12.
-The function then returns a string representing the time in 24-hour format.
+The function takes a single parameter s, which is the time string in the format
+"hh:mm:ssAM" or "hh:mm:ssPM", where "hh" is the hour, "mm" is the minute, "ss"
+is the second, and "AM" or "PM" indicates whether the time is in the morning or
+the afternoon/evening.
+
+The function first creates a regular expression to match the time string using
+the RegExp constructor. It then uses the match method on the input string s to
+check if it matches the regular expression. If there is no match, it throws a
+TypeError with an error message indicating that the input is invalid.
+
+If the input string matches the regular expression, the function extracts the
+hour, minute, second, and AM/PM indicator from the match result using
+destructuring assignment.
+
+It then checks the AM/PM indicator and adjusts the hour accordingly, using the
+parseInt function to convert the hour string to a number and the toString method
+to convert it back to a string. If the hour is 12 and the time is in the
+morning, it sets the hour to 0.
+
+Finally, the function returns a string representing the converted time in
+24-hour format.
+
+The main function in this code reads input from stdin and writes output to
+stdout using the createWriteStream method from the fs module. It calls the
+timeConversion function to convert the input time string to 24-hour format, and
+writes the result to the output stream.
 */
 
 /*
@@ -52,7 +70,11 @@ The function then returns a string representing the time in 24-hour format.
 function timeConversion(s: string): string {
     // Write your code here
     const regex: RegExp = /^([0-9]+):([0-9][0-9]):([0-9][0-9])([AP][M])$/;
-    let [, hour, min, sec, ampm]: RegExpMatchArray | null = s.match(regex) ?? null;
+    const match: RegExpMatchArray | null =s.match(regex);
+    if(match===null){
+        throw new TypeError("Invalid input: 'hh:mm:ssAM' or 'hh:mm:ssPM'");
+    }
+    let [, hour, min, sec, ampm] :string[] = match;
     if(hour && min && sec && ampm){
         if(ampm==='PM'){
             if(hour!=='12'){
