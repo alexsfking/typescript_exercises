@@ -36,6 +36,27 @@ difference is |15-17|=2.
 */
 
 /*
+The diagonalDifference function takes a two-dimensional array of integers arr as
+input and calculates the absolute difference between the sums of the diagonal
+elements of the matrix. Specifically, it calculates the sum of the elements
+along the diagonal from the top left corner to the bottom right corner (referred
+to as the tl_br variable), and the sum of the elements along the diagonal from
+the top right corner to the bottom left corner (referred to as the tr_bl
+variable). It then returns the absolute difference between tl_br and tr_bl.
+
+The function achieves this by using two nested loops to iterate through each
+element of the matrix. If the current element is on the top left to bottom right
+diagonal (i.e., if i === j), the element is added to tl_br. Similarly, if the
+current element is on the top right to bottom left diagonal (i.e., if j ===
+arr.length - i - 1), the element is added to tr_bl. Finally, the absolute
+difference between tl_br and tr_bl is returned.
+
+The main function reads input from the standard input stream, parses it to
+construct a matrix of integers, calls the diagonalDifference function with the
+matrix as input, and writes the result to the standard output stream.
+*/
+
+/*
  * Complete the 'diagonalDifference' function below.
  *
  * The function is expected to return an INTEGER.
