@@ -39,6 +39,42 @@ order to arrive at page p.
 */
 
 /*
+***Chat-GPT***
+This program defines a function named pageCount which is expected to return an
+integer. The function takes two parameters, n and p, which represent the total
+number of pages in a book and the target page number, respectively.
+
+The pageCount function calculates the minimum number of pages that must be
+turned in order to arrive at page p. To do this, it first calls two helper
+functions: leftCount and rightCount. These functions calculate the number of
+pages that need to be turned from the left and the right side of the book,
+respectively.
+
+The leftCount function takes the target page number as an argument and
+calculates the number of pages that need to be turned from the left side of the
+book to arrive at that page. It does this by dividing the target page number by
+2 and rounding down to the nearest integer.
+
+The rightCount function takes the total number of pages and the target page
+number as arguments and calculates the number of pages that need to be turned
+from the right side of the book to arrive at the target page. It does this by
+checking whether the total number of pages is odd or even. If it is odd, it
+calculates the number of pages to turn by subtracting the target page number
+from the total number of pages and dividing the result by 2, rounding down to
+the nearest integer. If it is even, it adds 1 to the difference between the
+total number of pages and the target page number before dividing by 2 and
+rounding down.
+
+The pageCount function then compares the number of pages that need to be turned
+from the left and the right side of the book and returns the smaller of the two
+values as the result.
+
+The rest of the program handles input and output. It reads two integers n and p
+from standard input, calls the pageCount function with these values, and writes
+the result to standard output.
+*/
+
+/*
  * Complete the 'pageCount' function below.
  *
  * The function is expected to return an INTEGER.
