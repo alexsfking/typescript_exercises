@@ -53,6 +53,36 @@ int: the minimum possible unfairness
 */
 
 /*
+***Chat-GPT***
+The given code defines a function maxMin that takes two arguments: k and arr.
+The k argument specifies the length of the subarray that should be created from
+the arr array. The function is designed to find the subarray of length k from
+arr such that the unfairness of the subarray is minimized.
+
+The unfairness of an array is defined as the difference between its maximum and
+minimum elements. For example, if the subarray is [4,7], then the unfairness is
+7 - 4 = 3. The goal is to find the subarray with the minimum unfairness among
+all possible subarrays of length k.
+
+The function maxMin first sorts the input array arr in ascending order using the
+built-in sort method with a comparator function that compares the elements
+numerically.
+
+Next, the function implements a sliding window approach to iterate through all
+possible subarrays of length k in arr. The sliding window has a fixed size of
+k-1, and it is shifted by one element at a time. For each window position, the
+function calculates the difference between the maximum and minimum elements in
+the subarray. If this difference is smaller than the current minimum unfairness,
+it updates the minimum unfairness to this value.
+
+Finally, the function returns the minimum unfairness that it found.
+
+The main function reads input from the standard input stream, calls the maxMin
+function with the provided arguments, and writes the output to the standard
+output stream.
+*/
+
+/*
  * Complete the 'maxMin' function below.
  *
  * The function is expected to return an INTEGER.
