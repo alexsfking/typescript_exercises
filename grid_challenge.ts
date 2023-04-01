@@ -31,6 +31,37 @@ they are not.
 */
 
 /*
+***Chat-GPT***
+This is a TypeScript program that reads input from standard input, processes the
+input, and writes output to standard output. The program reads in a square grid
+of characters, where each row is a string and each character is in the range
+ascii[a-z]. The program rearranges the elements of each row alphabetically in
+ascending order and then checks if the columns are also in ascending
+alphabetical order, top to bottom.
+
+The isAlphabetical function takes an array of strings as input and checks if the
+strings are in ascending alphabetical order. It uses the every method to iterate
+over each character in the array and compare it to the previous character. If
+the current character is greater than or equal to the previous character, it
+returns true, indicating that the array is in order. If any comparison returns
+false, the every method returns false, indicating that the array is not in
+order.
+
+The gridChallenge function takes an array of strings representing a square grid
+of characters and returns a string ("YES" or "NO") indicating whether the
+columns are in ascending alphabetical order. The function first rearranges the
+elements of each row of the grid using the split, sort, and join methods. It
+then iterates over the columns of the grid and constructs an array of characters
+for each column using a nested loop. It then calls the isAlphabetical function
+to check if the column is in order. If any column is not in order, the function
+returns "NO". If all columns are in order, the function returns "YES".
+
+The main function reads the input from standard input using the readLine
+function and processes it using the gridChallenge function. It writes the output
+to standard output using the createWriteStream method.
+*/
+
+/*
  * Complete the 'gridChallenge' function below.
  *
  * The function is expected to return a STRING.
