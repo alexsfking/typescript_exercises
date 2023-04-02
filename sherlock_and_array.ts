@@ -30,48 +30,65 @@ function readLine(): string {
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
+function smallEdgeCases(arr:number[]):boolean{
+    if(arr.length<2){
+        //arr.length<0 not possible
+        //arr.length===0 ?yes or no?
+        //arr.length===1 yes
+        return true;
+    } 
+    //arr.length===2
+    if(arr[0]===0 || arr[1]===0){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function headTailEdgeCases(arr:number[], right:number):boolean{
+    right-=arr[arr.length-1];
+    if(right===0){
+        //edge case
+        //[11,0, ..., 0]
+        return true;
+    }
+    right+=arr[arr.length-1];
+    right-=arr[0];
+    if(right===0){
+        //edge case
+        //[0,0, ..., 11]
+        return true;
+    }
+    return false;
+}
+
 function balancedSums(arr: number[]): string {
     // Write your code here
+    const success:string="YES";
+    const failure:string="NO";
     if(arr.length<3){
-        //edge cases
-        if(arr.length===0 || arr.length===1){
-            //unsure if 0 should be yes or no
-            return "YES";
-        } else if(arr.length===2){
-            if(arr[0]===0 || arr[1]===0){
-                return "YES";
-            } else {
-                return "NO";
-            }
+        if(smallEdgeCases(arr)){
+            return success;
         }
-        throw new Error("Not implemented.")
+        return failure;
     }
     let left:number=0;
     let right:number=0;
     for(let i=0;i<arr.length;i++){
         right+=arr[i];
     }
-    right-=arr[arr.length-1];
-    if(right===0){
-        //edge case
-        //[11,0, ..., 0]
-        return "YES";
+    if(headTailEdgeCases(arr, right)){
+        return success;
     }
-    right+=arr[arr.length-1];
     right-=arr[0];
-    if(right===0){
-        //edge case
-        //[11,0, ..., 0]
-        return "YES";
-    }
     for(let i=1;i<arr.length-1;i++){
         right-=arr[i];
         left+=arr[i-1];
         if(left===right){
-            return "YES";
+            return success;
         }
     }
-    return "NO";
+    return failure;
 }
 
 function main() {
