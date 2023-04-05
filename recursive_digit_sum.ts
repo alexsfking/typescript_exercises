@@ -38,6 +38,31 @@ super digit of 9875 will be calculated as:
 */
 
 /*
+***Chat-GPT***
+The superDigit function and calculateSuper function are used to calculate the
+super digit of a given integer n multiplied by k.
+
+The calculateSuper function takes a number p as input and recursively calculates
+the super digit of p by adding up the individual digits of p. If p has only one
+digit, then it is returned as the super digit. If p has more than one digit,
+then calculateSuper is called again with the sum of the digits until the super
+digit is found.
+
+The superDigit function takes a string n and a number k as input. It first
+calculates the sum of the digits in n multiplied by k. It then calls the
+calculateSuper function with this sum to get the super digit of the integer.
+
+The main function reads the input string from the standard input and passes it
+to the superDigit function. The result is then written to the standard output.
+
+To illustrate how these functions work, let's consider an example where n is
+"9875" and k is 4. The sum of the digits of "9875" is 29, so total is set to 29
+* 4 = 116. The calculateSuper function is then called with 116, which adds up
+the digits and returns 8. Therefore, the super digit of "9875" multiplied by 4
+is 8.
+*/
+
+/*
  * Complete the 'superDigit' function below.
  *
  * The function is expected to return an INTEGER.
