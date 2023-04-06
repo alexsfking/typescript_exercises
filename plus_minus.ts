@@ -23,6 +23,20 @@ function readLine(): string {
 }
 
 /*
+***Chat-GPT***
+The plusMinus function takes an array of integers as its parameter arr and
+calculates the ratio of positive, negative, and zero integers in the array. It
+does this by iterating over the array using a loop and counting the number of
+positive, negative, and zero integers encountered. Finally, it prints the ratios
+of each of these categories to the total number of integers in the array, with
+each ratio rounded to 6 decimal places.
+
+The function does not return any value, but rather uses the console.log function
+to print the ratios to the console. The toFixed method is used to round the
+ratios to 6 decimal places before printing them.
+*/
+
+/*
  * Complete the 'plusMinus' function below.
  *
  * The function accepts INTEGER_ARRAY arr as parameter.
