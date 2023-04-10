@@ -93,6 +93,26 @@ sequence)
 */
 
 /*
+***Chat-GPT***
+The code defines a function called sumXor(n) which takes an integer n as input
+and returns the number of integers x, where 0 <= x <= n, that satisfy the
+equation n+x === n^x, where ^ denotes bitwise XOR. The code first checks if n is
+0 and if so, returns 1 as the answer because there is only one value of x (0)
+that satisfies the equation for n=0.
+
+Next, the code converts the integer n to its binary representation using the
+toString() method with base 2. It then counts the number of zeros in the binary
+representation of n by iterating through each character of the binary string and
+incrementing a counter whenever a 0 is encountered. Finally, the function
+returns 2 to the power of the count of zeros, which is the number of integers x
+that satisfy the equation.
+
+The code also includes some commented-out code that was used to generate a table
+of the number of solutions for n=0 to n=30. This table shows that the number of
+solutions for a given value of n is equal to 2 to the power of the number of
+zeros in the binary representation of n.
+
+/*
  * Complete the 'sumXor' function below.
  *
  * The function is expected to return a LONG_INTEGER.
