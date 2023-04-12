@@ -60,20 +60,16 @@ chaotic if someone has bribed more than 2 people.
 
 function minimumBribes(q: number[]): void {
     // Write your code here
-    let stack:number[]=[];
     let next_num:number=q.length;
     let current_index:number=q.length-1;
     let count:number=0;
     while(next_num!=1){
         if(next_num-current_index>3){
             console.log("Too chaotic");
-            //console.log(stack);
-            //console.log(next_num,current_index);
             return;
         }
         if(q[current_index]===next_num){
             count+=next_num-current_index-1;
-            stack.push(next_num);
             q.splice(current_index,1);
             current_index=q.length-1;
             next_num--;
@@ -82,7 +78,6 @@ function minimumBribes(q: number[]): void {
         }
     }
     console.log(count);
-    //console.log(stack);
     return;
 }
 
