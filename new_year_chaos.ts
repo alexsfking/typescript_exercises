@@ -53,6 +53,26 @@ chaotic if someone has bribed more than 2 people.
 */
 
 /*
+***Chat-GPT***
+The minimumBribes function takes an array of integers q as input, representing
+the final positions of people in a queue after some number of bribes have taken
+place.
+
+The function then determines the minimum number of bribes that took place to get
+to the given queue order, and prints the number of bribes. If anyone has bribed
+more than two people, the function prints "Too chaotic".
+
+The function works by iterating through the queue from back to front, and for
+each person, checking how many people have bribed them. If the person has been
+bribed by more than two people, the function prints "Too chaotic" and exits.
+Otherwise, if the person has not been bribed at all, the function moves on to
+the next person. If the person has been bribed by one or two people, the
+function adds the number of bribes to a count variable and removes the person
+from the queue. The function then continues iterating through the queue until it
+reaches the front, at which point it prints the count variable.
+*/
+
+/*
  * Complete the 'minimumBribes' function below.
  *
  * The function accepts INTEGER_ARRAY q as parameter.
