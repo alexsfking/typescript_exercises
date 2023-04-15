@@ -61,10 +61,7 @@ A single string s.
  * The function accepts STRING s as parameter.
  */
 
-function isValid(s: string): string {
-    // Write your code here
-    const success:string="YES";
-    const failure:string="NO";
+function countFrequency(s:string): Record<string,number>{
     const freq:Record<string,number>={};
     for(let i=0;i<s.length;i++){
         if(s[i] in freq){
@@ -73,6 +70,10 @@ function isValid(s: string): string {
             freq[s[i]]=1;
         }
     }
+    return freq;
+}
+
+function countFrequencyValues(freq:Record<string,number>): Record<number,number> {
     const freq_values:Record<number,number>={};
     for(const key in freq){
         if(freq[key]in freq_values){
@@ -81,6 +82,15 @@ function isValid(s: string): string {
             freq_values[freq[key]]=1;
         }
     }
+    return freq_values;
+}
+
+function isValid(s: string): string {
+    // Write your code here
+    const success:string="YES";
+    const failure:string="NO";
+    const freq:Record<string,number>=countFrequency(s);
+    const freq_values:Record<number,number>=countFrequencyValues(freq);
     /*
     Possibilities for freq_values
     1 key -> Valid
