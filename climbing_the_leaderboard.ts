@@ -40,6 +40,7 @@ player_score=[70,80,105]
 out=[4,3,1]
 */
 
+
 /*
  * Complete the 'climbingLeaderboard' function below.
  *
@@ -49,10 +50,8 @@ out=[4,3,1]
  *  2. INTEGER_ARRAY player
  */
 
-function climbingLeaderboard(ranked: number[], player: number[]): number[] {
-    // Write your code here
-    const ranks:number[]=[];
-    ranks.push(1);
+function createRanks(ranked: number[]): number[]{
+    const ranks:number[]=[1];
     for(let i=1;i<ranked.length;i++){
         if(ranked[i]===ranked[i-1]){
             ranks.push(ranks[ranks.length-1]);
@@ -60,6 +59,12 @@ function climbingLeaderboard(ranked: number[], player: number[]): number[] {
             ranks.push(ranks[ranks.length-1]+1);
         }
     }
+    return ranks;
+}
+
+function climbingLeaderboard(ranked: number[], player: number[]): number[] {
+    // Write your code here
+    const ranks:number[]=createRanks(ranked);
     const out:number[]=[];
     for(const player_score of player){
         while(ranked.length){
