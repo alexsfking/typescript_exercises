@@ -40,6 +40,43 @@ player_score=[70,80,105]
 out=[4,3,1]
 */
 
+/*
+The given code implements a solution for an arcade game where a player wants to
+climb to the top of the leaderboard and track their ranking. The game uses Dense
+Ranking, where players with equal scores receive the same ranking number, and
+the next player(s) receive the immediately following ranking number.
+
+The code defines three main functions:
+
+    createRanks(ranked: number[]): number[]: This function takes an array of
+    integers ranked as input, which represents the scores of players on the
+    leaderboard. It returns an array ranks of the same length as ranked, where
+    ranks[i] represents the rank of the player with the score ranked[i] according to
+    the Dense Ranking system. The function iterates through the ranked array and
+    calculates the ranks by comparing consecutive scores. If two scores are equal,
+    they are assigned the same rank, otherwise, the rank is incremented by 1.
+
+    climbingLeaderboard(ranked: number[], player: number[]): number[]: This is the
+    main function that solves the problem. It takes two input arrays of integers -
+    ranked representing the scores on the leaderboard, and player representing the
+    scores of the player. It returns an array out of the same length as player,
+    where out[i] represents the rank of the player with the score player[i] after
+    playing the game. The function first calls the createRanks function to calculate
+    the ranks of the players on the leaderboard. Then, for each score in the player
+    array, it compares it with the scores on the leaderboard using a while loop. It
+    updates the ranked and ranks arrays based on the comparison and pushes the
+    corresponding rank of the player into the out array.
+
+    main(): This is the entry point of the program. It reads input from standard
+    input, parses it, and calls the climbingLeaderboard function to get the results.
+    It then writes the results to standard output.
+
+In summary, the climbingLeaderboard function and its helper function createRanks
+implement a solution for tracking the ranking of a player in an arcade game with
+Dense Ranking system. The createRanks function calculates the ranks of players
+on the leaderboard, and the climbingLeaderboard function uses these ranks to
+determine the rank of the player after playing the game.
+*/
 
 /*
  * Complete the 'climbingLeaderboard' function below.
