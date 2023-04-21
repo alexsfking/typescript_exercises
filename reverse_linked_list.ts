@@ -95,6 +95,44 @@ Returns
  */
 
 /*
+***Chat-GPT***
+The reverse function in the given TypeScript code is used to reverse the order
+of a singly linked list. It takes a reference to the head node of the linked
+list as its parameter and returns a reference to the head of the reversed list.
+
+The function uses a three-pointer approach to reverse the linked list. The three
+pointers used are prev_node, current_node, and next_node.
+
+    Initially, prev_node is set to null, current_node is set to the head of the
+    input linked list, and next_node is set to null.
+
+    Then, a while loop is used to iterate through each node in the linked list until
+    current_node becomes null, which means we have reached the end of the original
+    linked list.
+
+    Inside the loop, the next_node is set to the next node after the current_node by
+    accessing the next property of the current_node.
+
+    Then, the next property of the current_node is set to prev_node, effectively
+    reversing the next pointer of the current node.
+
+    After that, prev_node is set to current_node, and current_node is set to
+    next_node, effectively moving the three pointers one step forward in the linked
+    list.
+
+    Once the loop completes, prev_node will be pointing to the last node in the
+    original linked list, which becomes the new head of the reversed linked list.
+
+    Finally, the function returns prev_node, which is the head of the reversed
+    linked list.
+
+The time complexity of the reverse function is O(n), where n is the number of
+nodes in the linked list, as it needs to traverse the entire linked list once to
+reverse the order of nodes. The space complexity is O(1), as it uses a constant
+amount of additional space to store the three pointers.
+*/
+
+/*
  * For your reference:
  *
  * SinglyLinkedListNode {
