@@ -78,6 +78,53 @@ function printDoublyLinkedList(node: DoublyLinkedListNode | null, sep: string, w
  */
 
 /*
+***Chat-GPT***
+The given code is a TypeScript implementation of a doubly linked list with a
+reverse function and a helper function called swapNodePointers. Let's go through
+the code and understand its functionality.
+
+The DoublyLinkedListNode class represents a node in a doubly linked list. It has
+three properties:
+
+    data: a number that stores the data of the node.
+    next: a reference to the next node in the doubly linked list.
+    prev: a reference to the previous node in the doubly linked list.
+
+The DoublyLinkedList class represents the doubly linked list itself. It has two
+properties:
+
+    head: a reference to the head (first) node of the doubly linked list.
+    tail: a reference to the tail (last) node of the doubly linked list.
+
+The insertNode method of the DoublyLinkedList class is used to insert a new node
+with the given data at the end of the doubly linked list.
+
+The printDoublyLinkedList function is a helper function that prints the data of
+each node in the doubly linked list, separated by a given separator, to a given
+write stream.
+
+The swapNodePointers function is a helper function that takes a
+DoublyLinkedListNode object as input and swaps its next and prev pointers. It
+simply swaps the references of the next and prev properties of the node.
+
+The reverse function is the main function that is expected to reverse the doubly
+linked list. It takes a DoublyLinkedListNode object as input and returns the
+head (first) node of the reversed doubly linked list. The function uses an
+iterative approach to reverse the doubly linked list. It maintains two pointers,
+current_node and prev_node, initially pointing to the head of the doubly linked
+list. It iterates through the list, swapping the next and prev pointers of each
+node using the swapNodePointers function, until it reaches the end of the list.
+Finally, it returns the prev_node which now points to the head of the reversed
+doubly linked list.
+
+The main function reads input from standard input, creates a doubly linked list,
+calls the reverse function to reverse the doubly linked list, and prints the
+reversed doubly linked list to standard output using the printDoublyLinkedList
+function. It repeats this process for multiple test cases as specified by the
+input.
+*/
+
+/*
  * For your reference:
  *
  * DoublyLinkedListNode {
