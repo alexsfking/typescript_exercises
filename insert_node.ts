@@ -104,6 +104,45 @@ position=2
  *
  */
 
+/*
+Sure! Here's the explanation of the insertNodeAtPosition function in the
+provided code:
+
+The insertNodeAtPosition function takes three parameters:
+
+    llist: A reference to the head node of a singly linked list.
+    data: An integer value to be inserted as a new node in the linked list.
+    position: An integer indicating the position where the new node should be
+    inserted. A position of 0 indicates the head, a position of 1 indicates one
+    node away from the head, and so on.
+
+The function first creates a new node with the given data value using the
+SinglyLinkedListNode class. Then, based on the position parameter, the function
+inserts the new node at the desired position in the linked list.
+
+If position is 0, the new node is inserted as the new head of the linked list,
+by setting its next pointer to the current head of the list and returning the
+new node as the new head.
+
+If position is greater than 0, the function iterates through the linked list
+using a while loop and a count variable to keep track of the current position.
+When the desired position is reached (position - 1), the function updates the
+next pointer of the current node to point to the new node, and the next pointer
+of the new node to point to the next node in the original list, effectively
+inserting the new node at the desired position.
+
+Finally, the function returns the reference to the head of the updated linked
+list.
+
+Note: The SinglyLinkedListNode class represents a node in a singly linked list
+and has two properties - data which holds the value of the node, and next which
+is a reference to the next node in the list or null if it is the last node. The
+SinglyLinkedList class represents a singly linked list and has properties head
+and tail which hold references to the head and tail nodes respectively. The
+insertNode function in the SinglyLinkedList class is used to insert a new node
+at the tail of the linked list.
+*/
+
 function insertNodeAtPosition(llist: SinglyLinkedListNode, data: number, position: number): SinglyLinkedListNode {
     // Write your code here
     let current_node:SinglyLinkedListNode|null=llist;
